@@ -1,0 +1,26 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <!-- Display existing messages -->
+  <ul>
+    <% messages.forEach(message => { %>
+      <li>
+        <strong><%= message.user %>:</strong>
+        <%= message.text %> (added on <%= message.added.toISOString() %>)
+      </li>
+    <% }); %>
+  </ul>
+
+  <!-- Add a link to the new message form -->
+  <a href="/new">Add New Message</a>
+</body>
+</html>
